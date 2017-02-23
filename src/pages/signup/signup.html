@@ -1,0 +1,34 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="signupScreen">  
+  <ion-list>
+    <div id="divHeading">
+      <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+    </div>
+    <div id="divSignupForm">
+      <form #signupForm="ngForm" novalidate id="signupFormId">
+        <button (click)="onSignup(signupForm)" type="submit" block>
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>      
+        <ion-input [(ngModel)]="signup.fullname" type="text" name="fullname" placeholder="full name" #fullname="ngModel" required></ion-input>
+        <p ion-text [hidden]="fullname.valid || submitted == false" color="danger" padding-left>
+          Full Name is required
+        </p>
+        <ion-input [(ngModel)]="signup.email" type="email" name="email" placeholder="email" #email="ngModel" required></ion-input>
+        <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+          Email is required
+        </p>
+        <ion-input [(ngModel)]="signup.password" type="password" name="password" placeholder="password" #password="ngModel" required></ion-input>
+        <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+          Password is required
+        </p>
+      </form>
+    </div>
+  </ion-list>
+</ion-content>

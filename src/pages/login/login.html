@@ -1,0 +1,32 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="loginScreen">
+  <ion-list>       
+    <div id="divHeading">
+      <ion-icon name="ios-lock-outline"></ion-icon>
+    </div>
+    <div id="divLoginForm">
+      <form #loginForm="ngForm" novalidate id="loginFormId">
+        <button block (click)="onLogin(loginForm)"><ion-icon name="ios-power"></ion-icon></button>
+        <ion-input [(ngModel)]="login.email" type="email" name="email" placeholder="email" #email="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+        <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+          Email is required
+        </p>
+        <ion-input [(ngModel)]="login.password" type="password" name="password" placeholder="password" #password="ngModel" required></ion-input>
+        <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+          Password is required
+        </p>
+      </form>
+    </div>
+    <div id="divLinks">
+      <button ion-button (click)="onForgotPassword()" clear class="mlLinks">Forgot Password?</button>
+      <button ion-button (click)="onSignup()" clear class="mlLinks right">Sign Up</button>
+    </div>
+  </ion-list>
+</ion-content>

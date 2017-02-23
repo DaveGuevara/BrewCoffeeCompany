@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notes
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()">Done</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-item-divider>
+    Enter a note or comment for this transaction
+  </ion-item-divider>
+  <ion-item>
+    <ion-textarea [(ngModel)]="msg" rows="6" placeholder="here..."></ion-textarea>
+  </ion-item>
+</ion-content>

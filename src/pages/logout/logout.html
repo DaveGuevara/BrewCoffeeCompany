@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Logout</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="logoutScreen"> 
+  <ion-list>
+    <div id="divHeading">
+      <ion-icon name="md-log-out"></ion-icon>
+      <h1 style="color: #fff;text-align: center;"><strong>You're now logged out!</strong></h1>
+    </div>
+    <div padding>
+      <ion-row responsive-sm>
+          <ion-col>
+            <button ion-button (click)="doLogin(loginForm)" type="submit" block>Login</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button (click)="doSignup()" light block>Signup</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+</ion-content>

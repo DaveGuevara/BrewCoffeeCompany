@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Cancel</button>
+    </ion-buttons>
+    <ion-title>
+      Change Name
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="changeName(newname)">Save</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="outer-content">
+  <ion-item-divider>
+    Enter your full name
+  </ion-item-divider>
+  <ion-list>
+    <ion-item class="ml-input">
+      <ion-icon name="md-clipboard" item-left></ion-icon>
+      <ion-label floating>Full Name</ion-label>
+      <ion-input [(ngModel)]="newname" type="text"></ion-input>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

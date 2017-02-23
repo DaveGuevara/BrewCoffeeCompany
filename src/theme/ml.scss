@@ -1,0 +1,175 @@
+
+// Brew Coffee Co Custom Styles
+
+// Fonts - http://www.localfont.com/
+// --------------------------------------------------
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.eot');
+  src: url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.eot?#iefix') format('embedded-opentype'),
+       local('PT Sans Narrow'),
+       local('PT-Sans-Narrow-regular'),
+       url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.woff2') format('woff2'),
+       url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.woff') format('woff'),
+       url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.ttf') format('truetype'),
+       url('../assets/fonts/PT-Sans-Narrow-regular/PT-Sans-Narrow-regular.svg#PTSansNarrow') format('svg');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.eot');
+  src: url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.eot?#iefix') format('embedded-opentype'),
+       local('PT Sans Narrow Bold'),
+       local('PT-Sans-Narrow-700'),
+       url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.woff2') format('woff2'),
+       url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.woff') format('woff'),
+       url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.ttf') format('truetype'),
+       url('../assets/fonts/PT-Sans-Narrow-700/PT-Sans-Narrow-700.svg#PTSansNarrow') format('svg');
+}
+
+// Alert custom text color
+// --------------------------------------------------
+.alertDanger .button-inner{
+  color: red;
+  button{
+    color: red;
+  }
+}
+
+// Menu custom styles
+// --------------------------------------------------
+.item .mlmenuicon {
+  font-size: 32px;
+}
+.mlmenuitem {
+  font-family: 'PT Sans Narrow';
+  font-size: 20px;
+}
+
+// Input Forms custom styles
+// --------------------------------------------------
+.ml-input.item {
+  padding-left: 0;
+  padding: 0;
+  border-bottom: 1px solid #c8c7cc;
+  height: 60px;
+}
+.ml-input.item.item-block .item-inner {
+  border-bottom: 0;
+}
+.ml-input.item-block:first-child {
+  border-top: 0;
+}
+.ml-input ion-icon[item-left] {
+  background-color: #f0f0f0;
+  width: 61px;
+  height: 60px;
+  margin: 0;
+}
+.ml-input ion-icon[item-left]:before {
+  color: #999999;
+  margin-top: 17px;
+  font-size: 28px;
+}
+.ml-input input {
+  padding-left: 10px;
+}
+.ml-input ion-input {
+  margin-top: -1px;
+}
+.ml-input ion-datetime {
+  padding: 0px 8px 8px 10px;
+  margin-left: 20px;
+}
+.ml-input ion-label {
+  margin: 13px 8px 13px 0;
+}
+.ml-input ion-label[floating] {
+  -webkit-transform: translate3d(10px, 8px, 0);
+  transform: translate3d(10px, 8px, 0);
+  color: #7f7f7f;
+}
+.ml-input.input-has-focus ion-label[floating] {
+  -webkit-transform: translate3d(10px, 6px, 0);
+  transform: translate3d(10px, -2px, 0) scale(0.65);
+  color: #006699;
+}
+.ml-input.input-has-value ion-label[floating] {
+  -webkit-transform: translate3d(10px, 6px, 0);
+  transform: translate3d(10px, -2px, 0) scale(0.65);
+  color: #006699;
+}
+.ml-input .ml-label-has-input {
+  color: #006699;
+  margin-left: 10px;
+  font-size: 11px;
+}
+.ml-input .ml-has-input {
+  margin-left: 10px;
+}
+.ml-input .ml-has-no-input {
+  margin-left: 10px;
+  color: #7f7f7f;
+}
+.ml-input .dt-has-no-input {
+  color: #7f7f7f;
+}
+.ml-fa {
+  padding-bottom: 7px;
+}
+
+// Slide Animation
+// --------------------------------------------------
+.ng-hide {
+  /* this is just another form of hiding an element */
+  display: block!important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.cssSlideUp {
+    transition: .5s linear all;
+    height: 40px;
+    overflow: hidden;
+    background-color: #d9534f;
+    text-align: center;
+    color: #fff;
+}
+.cssSlideUp.ng-hide {
+    height:0;
+}
+
+// Fade in effects
+// --------------------------------------------------
+// https://codepen.io/bluehaus/pen/EfGyi/
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+// Style for cleared transactions
+// --------------------------------------------------
+.transactionIsCleared_OFF .item-inner {
+  background-color: #eee;
+  -webkit-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
