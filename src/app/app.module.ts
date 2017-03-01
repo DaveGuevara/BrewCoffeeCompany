@@ -62,6 +62,15 @@ const firebaseAuthConfig = {
   method: AuthMethods.Password
 }
 
+//  IONIC ICLOUD
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'APP_ID'
+  }
+};
+
+
 @NgModule({
   declarations: [
     BrewApp,
@@ -97,6 +106,7 @@ const firebaseAuthConfig = {
       popoverEnter: 'popover-md-pop-in',
       popoverLeave: 'popover-md-pop-out'
     }),
+    CloudModule.forRoot(cloudSettings),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   bootstrap: [IonicApp],
