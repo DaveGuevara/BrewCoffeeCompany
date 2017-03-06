@@ -27,7 +27,7 @@ export class TutorialPage {
         title: '<strong>Brew Coffee Co</strong>',
         description: 'Atlanta <b>hottest</b> mobile coffee bar.. ',
         icon: 'fa fa-coffee',
-        color: 'introGreen',
+        color: 'introRed',
         class: 'slide-title app-title',
         image: '',
       },

@@ -1,6 +1,6 @@
 
 page-tutorial{
-  
+
   .toolbar-background {
     background: #172F39;
   }
@@ -9,7 +9,7 @@ page-tutorial{
   }
   .button-clear {
     color: #31C0E6;
-  } 
+  }
   .slide-zoom {
     height: 100%;
   }
@@ -36,6 +36,9 @@ page-tutorial{
   }
   .introGreen {
     background-color: #28a54c;
+  }
+  .introRed{
+    background-color: red;
   }
   .introOrange {
     background-color: #ff6600;
@@ -75,7 +78,7 @@ page-tutorial{
     }
   }
   ion-slides {
-    background-color: #172F39; 
+    background-color: #172F39;
   }
 
 }
