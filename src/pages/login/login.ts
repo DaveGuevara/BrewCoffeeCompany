@@ -15,22 +15,22 @@ import { UserData } from '../../providers/user-data';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  
+
   login: {email?: string, password?: string} = {};
   submitted = false;
 
   constructor(
     public alertController: AlertController,
     public menuCtrl: MenuController,
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public userData: UserData) {
 
-    this.login.email = 'paulina@test.com';
+    this.login.email = 'username@test.com';
 
    }
 
   onLogin(form) {
-    
+
     this.submitted = true;
     if (form.valid) {
       this.userData.LoadingControllerShow();
@@ -57,7 +57,7 @@ export class LoginPage {
   LoginError(error) {
     let alert = this.alertController.create({
       title: 'Login Failed',
-      subTitle: 'Please check your email and/or password and try again',
+      subTitle: 'Please check your username and password and try again',
       buttons: [
         {
           text: 'Ok',
