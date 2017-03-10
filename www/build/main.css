@@ -18818,6 +18818,9 @@ ion-app [no-margin] .scroll-content {
 .content-ios.outer-content {
   background: #efeff4;
   background-image: url("../assets/img/background.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 
 .content-ios hr {
