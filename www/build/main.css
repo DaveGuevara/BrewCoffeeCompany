@@ -18816,11 +18816,8 @@ ion-app [no-margin] .scroll-content {
 }
 
 .content-ios.outer-content {
-  background: #efeff4;
-  background-image: url("../assets/img/background.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: left top;
+  background-color: red;
+  background-image: url("../Images/background.jpg");
 }
 
 .content-ios hr {
