@@ -13,7 +13,7 @@
     </div>
     <div id="divLoginForm">
       <form #loginForm="ngForm" novalidate id="loginFormId">
-        <button block (click)="onLogin(loginForm)"><ion-icon name="ios-power"></ion-icon></button>
+        <button block (click)="onLogin(loginForm)"><ion-icon name="ios-home"></ion-icon></button>
         <ion-input [(ngModel)]="login.email" type="email" name="email" placeholder="email" #email="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
         <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
           Your Username is required
