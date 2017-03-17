@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 // app pages
-import { AccountListPage } from '../mymoney/account-list/account-list';
+import { DashboardPage } from '../myaccount/dashboard/dashboard';
 
 // Services
 import { UserData } from '../../providers/user-data';
@@ -12,7 +12,7 @@ import { UserData } from '../../providers/user-data';
   templateUrl: 'signup.html'
 })
 export class SignupPage {
-  
+
   signup: {fullname?: string, email?: string, password?: string} = {};
   submitted = false;
   alertMessage: any;
@@ -21,10 +21,10 @@ export class SignupPage {
     public nav: NavController,
     public alertController: AlertController,
     public userData: UserData) {}
-  
+
   onSignup(form) {
     this.submitted = true;
-    if (form.valid) {      
+    if (form.valid) {
       this.userData.LoadingControllerShow();
       this.userData.createUser(this.signup).then(() => {
           this.SignupSuccess();
@@ -39,10 +39,10 @@ export class SignupPage {
 
   SignupSuccess() {
     setTimeout(() => {
-        this.nav.setRoot(AccountListPage, {}, {animate: true, direction: 'forward'});
-      }, 1000);    
+        this.nav.setRoot(DashboardPage, {}, {animate: true, direction: 'forward'});
+      }, 1000);
   }
-  
+
   SignUpError(error): void {
     switch (error.code) {
       case "auth/email-already-in-use":
@@ -65,5 +65,5 @@ export class SignupPage {
     });
     alert.present();
   }
-  
+
 }

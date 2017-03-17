@@ -5,7 +5,7 @@ import { AlertController, MenuController , NavController } from 'ionic-angular';
 // app pages
 import { SignupPage } from '../signup/signup';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
-import { AccountListPage } from '../mymoney/account-list/account-list';
+import { DashboardPage} from '../myaccount/dashboard/dashboard';
 
 // services
 import { UserData } from '../../providers/user-data';
@@ -15,22 +15,22 @@ import { UserData } from '../../providers/user-data';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  
+
   login: {email?: string, password?: string} = {};
   submitted = false;
 
   constructor(
     public alertController: AlertController,
     public menuCtrl: MenuController,
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public userData: UserData) {
 
-    this.login.email = 'paulina@test.com';
+    this.login.email = 'sample@ggc.edu';
 
    }
 
   onLogin(form) {
-    
+
     this.submitted = true;
     if (form.valid) {
       this.userData.LoadingControllerShow();
@@ -50,7 +50,7 @@ export class LoginPage {
 
   LoginSuccess() {
     setTimeout(() => {
-      this.navCtrl.setRoot(AccountListPage, {}, {animate: true, direction: 'forward'});
+      this.navCtrl.setRoot(DashboardPage, {}, {animate: true, direction: 'forward'});
     }, 1000);
   }
 

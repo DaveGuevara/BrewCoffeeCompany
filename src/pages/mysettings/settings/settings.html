@@ -21,32 +21,6 @@
   </ion-list>
   <ion-list>
     <ion-list-header>
-      Accounts and Transactions
-    </ion-list-header>
-    <button ion-item (click)="changeDefaltBalance()">
-      <ion-icon item-left name="ios-cash-outline"></ion-icon>
-      Default Balance
-      <ion-note item-right>
-        {{ userData.user?.defaultbalance }}
-      </ion-note>
-    </button>
-    <button ion-item (click)="changeDefaltDate()">
-      <ion-icon item-left name="ios-calendar-outline"></ion-icon>
-      Default Date
-      <ion-note item-right>
-        {{ userData.user?.defaultdate }}
-      </ion-note>
-    </button>
-    <button ion-item (click)="openAccountTypes()">
-      <ion-icon item-left name="ios-browsers-outline"></ion-icon>
-      Account Types
-      <ion-badge item-right color="light">
-        {{ userData.user?.accounttypescount }}
-      </ion-badge>
-    </button>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
       Security
     </ion-list-header>
     <ion-item>
@@ -85,19 +59,6 @@
     <button ion-item (click)="openAboutPage()">
       <ion-icon item-left name="ios-pin-outline"></ion-icon>
       About
-    </button>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
-      Advanced
-    </ion-list-header>
-    <button ion-item (click)="upgradeData()">
-      <ion-icon item-left name="ios-help-circle-outline"></ion-icon>
-      Upgrade Data
-    </button>
-    <button ion-item (click)="houseMember()">
-      <ion-icon item-left name="ios-help-circle-outline"></ion-icon>
-      Create House Member
     </button>
   </ion-list>
 </ion-content>

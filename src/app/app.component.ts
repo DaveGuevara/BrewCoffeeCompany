@@ -8,19 +8,19 @@ import { LoginAutoPage } from '../pages/loginauto/loginauto';
 import { LogoutPage } from '../pages/logout/logout';
 
 // app pages
-import { AccountListPage } from '../pages/mymoney/account-list/account-list';
-import { CategoryListPage } from '../pages/mymoney/category-list/category-list';
-import { BudgetListPage } from '../pages/mymoney/budget-list/budget-list';
-import { RecurringListPage } from '../pages/mymoney/recurring-list/recurring-list';
-import { PayeeListPage } from '../pages/mymoney/payee-list/payee-list';
-import { ReportListPage } from '../pages/mymoney/report-list/report-list';
+import { DashboardPage } from '../pages/myaccount/dashboard/dashboard';
+import { MenuListPage } from '../pages/myaccount/menu-list/menu-list';
+import { EventsListPage } from '../pages/myaccount/events-list/events-list';
+import { HistoryListPage } from '../pages/myaccount/history-list/history-list';
+import { OffersListPage } from '../pages/myaccount/offers-list/offers-list';
+import { AwardsListPage } from '../pages/myaccount/awards-list/awards-list';
 import { SettingsPage } from '../pages/mysettings/settings/settings';
 
 // services
 import { UserData } from '../providers/user-data';
 
 // firebase
-import firebase from 'firebase';
+//import firebase from 'firebase';
 
 @Component({
   templateUrl: 'app.html'
@@ -41,10 +41,12 @@ export class BrewApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Our Menu', component: AccountListPage, icon: 'ios-cafe-outline', color: '', showloader: false },
-      { title: 'Events', component: BudgetListPage, icon: 'ios-calendar-outline', color: '', showloader: false  },
-      { title: 'History', component: CategoryListPage, icon: 'ios-barcode-outline', color: '', showloader: true  },
-      { title: 'Offers', component: PayeeListPage, icon: 'ios-card-outline', color: '', showloader: true  },
+      { title: 'Dashboard', component: DashboardPage, icon: 'ios-keypad-outline', color: '', showloader: false },
+      { title: 'Our Menu', component: MenuListPage, icon: 'ios-cafe-outline', color: '', showloader: false },
+      { title: 'Events', component: EventsListPage, icon: 'ios-calendar-outline', color: '', showloader: false  },
+      { title: 'History', component: HistoryListPage, icon: 'ios-barcode-outline', color: '', showloader: true  },
+      { title: 'Offers', component: OffersListPage, icon: 'ios-card-outline', color: '', showloader: true  },
+      { title: 'Awards', component: AwardsListPage, icon: 'ios-ticket', color: '', showloader: true },
       { title: 'Settings', component: SettingsPage, icon: 'ios-settings-outline', color: '', showloader: false  },
     ];
     this.logoutpages = [
