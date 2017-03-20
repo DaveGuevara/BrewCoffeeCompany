@@ -8,6 +8,13 @@ import { UserData } from '../../../providers/user-data';
   selector: 'page-menu-list',
   templateUrl: 'menu-list.html'
 })
+
+app.controller('MyCtrl', function($scope) {
+ $scope.shouldShowDelete = false;
+ $scope.shouldShowReorder = false;
+ $scope.listCanSwipe = true
+});
+
 export class MenuListPage {
 
     constructor(
