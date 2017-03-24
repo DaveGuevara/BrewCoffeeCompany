@@ -46,7 +46,7 @@ export class BrewApp {
       { title: 'Events', component: EventsListPage, icon: 'ios-calendar-outline', color: '', showloader: false  },
       { title: 'History', component: HistoryListPage, icon: 'ios-barcode-outline', color: '', showloader: true  },
       { title: 'Offers', component: OffersListPage, icon: 'ios-card-outline', color: '', showloader: true  },
-      { title: 'Awards', component: AwardsListPage, icon: 'ios-ticket', color: '', showloader: true },
+      { title: 'Awards', component: AwardsListPage, icon: 'ios-pricetag-outline', color: '', showloader: true },
       { title: 'Settings', component: SettingsPage, icon: 'ios-settings-outline', color: '', showloader: false  },
     ];
     this.logoutpages = [

@@ -7,8 +7,20 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
   <ion-list>
-    List my current offers
-  </ion-list>
+      <ion-item-group *ngFor="let group of groupedOffers">
+        <ion-item-divider sticky>
+          <ion-label>
+            {{group.date}}
+          </ion-label>
+        </ion-item-divider>
+        <ion-item *ngFor="let offer of group.offers">
+          <h2> {{ offer.title }} </h2>
+          <p> {{ offer.content }} </p>
+          <p> <strong>valid on : </strong> {{ offer.date }} </p>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
 </ion-content>
