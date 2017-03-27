@@ -1,2 +1,28 @@
 page-dashboard {
 }
+.titleicon {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align:center;
+}
+
+.grid-basic-page {
+  background-image: url('../assets/img/dashboard.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+.chart{
+  height: 80%;
+}
+
+  ion-col div {
+    background-color: #F9FAFB;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    text-align: center;
+  }
+
+}

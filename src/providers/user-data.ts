@@ -37,8 +37,8 @@ export class UserData {
     this.userdata = firebase.database().ref('/users/');
     this.rewardsdata = firebase.database().ref('/rewards/');
     this.offersdata = firebase.database().ref('/offers/');
-    this.eventdata = firebase.database().ref('/events/');
-    this.menudata = firebase.database().ref('/menu/');
+    this.eventdata = firebase.database().ref('/Events/');
+    this.menudata = firebase.database().ref('/Menu/');
     //this.profilepicdata = firebase.storage().ref('/profilepics/');
   }
 
@@ -313,12 +313,27 @@ export class UserData {
   }
 */
 
-//
-// OFFERS
-//-----------------------------------------------------------------------
-getOffersList() {
-  return this.offersdata.orderByChild('date');
-}
+ //
+ // OFFERS
+ //-----------------------------------------------------------------------
+ getOffersList() {
+   return this.offersdata.orderByChild('date');
+ }
+
+ //
+ // EVENTS
+ //-----------------------------------------------------------------------
+ getEventsList() {
+   return this.eventdata.orderByChild('month');
+ }
+
+ //
+ // MENU
+ //-----------------------------------------------------------------------
+ getMenuList() {
+   return this.menudata.orderByChild('category');
+ }
+
 
   //
   // MISCELANEOUS
