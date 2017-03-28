@@ -24,11 +24,10 @@ export class UserData {
   userdata;
   userSettings;
   rewardsdata;
-  awardsdata;
   offersdata;
-  historydata;
   eventdata;
   menudata;
+  historylist;
   profilepicdata;
 
   constructor(
@@ -37,11 +36,9 @@ export class UserData {
 
     this.userdata = firebase.database().ref('/users/');
     this.rewardsdata = firebase.database().ref('/rewards/');
-    this.awardsdata = firebase.database().ref('/awards/');
     this.offersdata = firebase.database().ref('/offers/');
-    this.historydata = firebase.database().ref('/history/');
-    this.eventdata = firebase.database().ref('/events/');
-    this.menudata = firebase.database().ref('/menu/');
+    this.eventdata = firebase.database().ref('/Events/');
+    this.menudata = firebase.database().ref('/Menu/');
     //this.profilepicdata = firebase.storage().ref('/profilepics/');
   }
 
@@ -99,8 +96,8 @@ export class UserData {
 
     this.createUserProfile();
     this.createRewards();
-    this.createAwards();
-    this.createHistory();
+    this.createDefaultAwards();
+    this.createDefaultHistory();
   }
 
   createUserProfile() {
@@ -133,13 +130,13 @@ export class UserData {
     // Add member to Earn node under Rewards
     this.rewardsdata.child(this.user.rewardsid + "/earn/").update(rewardsmember);
   }
-  createAwards(){
+  createDefaultAwards(){
     var refTypes = this.rewardsdata.child(this.user.rewardsid + "/awards/");
        refTypes.push({ name: 'Join', type: 'join-award', description: ' ', icon: 'ios-cash-outline', reedeemed: 'false', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
   }
-  createHistory(){
+  createDefaultHistory(){
     var refTypes = this.rewardsdata.child(this.user.rewardsid + "/history/");
-       refTypes.push({ name: 'Join', type: 'join-award', points: '0' });       
+       refTypes.push({ name: 'Join', type: 'join-award', points: '0' });
   }
 
 
@@ -290,7 +287,6 @@ export class UserData {
     //this.updateAccountTypesCounter('add');
   }
 
-
   //
   // AWARDS
   //-----------------------------------------------------------------------
@@ -302,25 +298,41 @@ export class UserData {
     //this.updateAccountTypesCounter('add');
   }
 
-
   //
   // HISTORY
   //-----------------------------------------------------------------------
-  getHitory(): FirebaseListObservable<any> {
-    return this.af.database.list('/history/' + this.userauth.uid, {
-      query: {
-        orderByChild: 'dateCreated'
-      }
-    });
+  getHistoryList() {
+    return this.rewardsdata.child(this.user.rewardsid + '/history').orderByChild('datecreated');
   }
-  addHistory(points) {
+/*  addHistory(points) {
     var newHistory = {
         'points': points,
         'dateCreated': firebase.database['ServerValue']['TIMESTAMP']
     }
     this.historydata.child(this.userauth.uid).push(newHistory);
   }
+*/
 
+ //
+ // OFFERS
+ //-----------------------------------------------------------------------
+ getOffersList() {
+   return this.offersdata.orderByChild('date');
+ }
+
+ //
+ // EVENTS
+ //-----------------------------------------------------------------------
+ getEventsList() {
+   return this.eventdata.orderByChild('month');
+ }
+
+ //
+ // MENU
+ //-----------------------------------------------------------------------
+ getMenuList() {
+   return this.menudata.orderByChild('category');
+ }
 
 
   //

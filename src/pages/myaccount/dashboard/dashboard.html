@@ -3,11 +3,25 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Dashboard</ion-title>
+    <ion-title>
+       <div class="titleicon">
+         <img src="../../assets/img/Brew-logo-white.png" width="100px" />
+       </div>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-   This is the home page
+<ion-content class="grid-basic-page">
+  <br/><br/>
+
+  <ion-card class="card-background">
+    <ion-card-content>
+      <div class="chart">
+      </div>
+      <br/><br/>
+      <button ion-button block color="mlgreen" name="earn">Earn</button>
+      <button ion-button block color="mlgreen" name="redeem">Redeem</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

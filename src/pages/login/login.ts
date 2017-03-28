@@ -25,7 +25,7 @@ export class LoginPage {
     public navCtrl: NavController,
     public userData: UserData) {
 
-    this.login.email = 'sample@ggc.edu';
+    this.login.email = 'david@ggc.edu';
 
    }
 
