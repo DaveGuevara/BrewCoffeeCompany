@@ -9,20 +9,23 @@ page-dashboard {
 }
 
 .grid-basic-page {
+  border-radius: 20px;
   background-image: url('../assets/img/dashboard.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #FFFFFF;
-.chart{
-  height: 80%;
 }
-
-  ion-col div {
+.chart{
     background-color: #F9FAFB;
     padding: 5px;
     border: 1px solid #ddd;
     border-radius: 2px;
     text-align: center;
-  }
+    height: 300px;
+}
 
+ion-card.card-background{
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
 }

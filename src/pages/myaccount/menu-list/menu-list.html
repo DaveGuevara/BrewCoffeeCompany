@@ -7,7 +7,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="grid-basic-page">>
+  <ion-card>
   <ion-list>
       <ion-item-group *ngFor="let group of groupedMenu">
         <ion-item-divider sticky>
@@ -16,9 +17,15 @@
           </ion-label>
         </ion-item-divider>
         <ion-item *ngFor="let menu of group.menu">
-          <h2> {{ menu.name }} </h2>
-          <p> {{ menu.description }} </p>
+            <div class="left">
+              <img src="../../assets/img/coffee.jpg" class="customized-image">
+            </div>
+            <div class="right">
+              <h2> {{ menu.name }} </h2>
+              <p> {{ menu.description }} </p>
+            </div>
         </ion-item>
       </ion-item-group>
     </ion-list>
+  </ion-card>
 </ion-content>

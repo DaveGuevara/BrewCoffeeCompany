@@ -1,3 +1,18 @@
 page-menu-list {
-
+  .customized-image{
+    max-height: 75px !important;
+  }
+  .left {
+   display: inline-block;
+   width: 25%; /* or waterver you need = w1 */
+   vertical-align: top;
+  }
+  .right {
+   display:inline-block;
+   width: 75%; /* (100-w1)% */
+   vertical-align: top;
+  }
+}
+ion-card {
+  border-radius: 15px !important;
 }
