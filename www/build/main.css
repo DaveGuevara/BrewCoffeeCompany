@@ -72971,6 +72971,14 @@ page-logout .logoutScreen {
   background-color: #172F39;
 }
 
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+}
+
 .titleicon {
   position: absolute;
   width: 100%;
@@ -73001,6 +73009,30 @@ ion-card.card-background {
   color: white;
 }
 
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+}
+
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+}
+
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+}
+
 page-menu-list .customized-image {
   max-height: 75px !important;
 }
@@ -73021,6 +73053,14 @@ page-menu-list .right {
 
 ion-card {
   border-radius: 15px !important;
+}
+
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
 }
 
 page-personalprofile ion-card {

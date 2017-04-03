@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-
-//  services
+//  Services
 import { UserData } from '../../../providers/user-data';
+// App page-dashboard
+import { EarnPage } from  '../earn/earn';
+// Models
+import { Earn } from '../../../models/earn.model';
 
 @Component({
   selector: 'page-dashboard',
@@ -17,6 +20,12 @@ export class DashboardPage {
 
   ionViewDidLoad() {
     this.userData.LoadingControllerDismiss();
+  }
+
+
+  Earn() {
+    let tempEarn = new Earn(null,"1");
+    this.nav.push(EarnPage, {paramAccount: tempEarn});
   }
 
 }
