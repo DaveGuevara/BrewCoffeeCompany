@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item-group *ngFor="let group of groupedEvents">
+        <ion-item-divider sticky>
+          <ion-label>
+            {{group.date}}
+          </ion-label>
+        </ion-item-divider>
+        <ion-item *ngFor="let event of group.events">
+          <h2> {{ event.title }} </h2>
+          <p> {{ event.location }} </p>
+          <p> {{ event.address }} </p>
+          <p> {{ event.city}}, {{ event.st }}  {{ event.zip }} </p>
+          <p> {{ event.starttime }} - {{ event.endtime }} </p>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+</ion-content>

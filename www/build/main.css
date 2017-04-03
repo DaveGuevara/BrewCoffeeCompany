@@ -5837,10 +5837,6 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea::-moz-placeholder {
-  padding-left: 2px;
-}
-
 textarea:-ms-input-placeholder {
   padding-left: 2px;
 }
@@ -18816,8 +18812,7 @@ ion-app [no-margin] .scroll-content {
 }
 
 .content-ios.outer-content {
-  background-color: red;
-  background-image: url("../Images/background.jpg");
+  background: #efeff4;
 }
 
 .content-ios hr {
@@ -72972,6 +72967,58 @@ page-logout .logoutScreen {
   background-color: #172F39;
 }
 
+.titleicon {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.grid-basic-page {
+  border-radius: 20px;
+  background-image: url("../assets/img/dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFFFFF;
+}
+
+.chart {
+  background-color: #F9FAFB;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+}
+
+ion-card.card-background {
+  border-color: transparent;
+  background-color: transparent;
+  color: white;
+}
+
+page-menu-list .customized-image {
+  max-height: 75px !important;
+}
+
+page-menu-list .left {
+  display: inline-block;
+  width: 25%;
+  /* or waterver you need = w1 */
+  vertical-align: top;
+}
+
+page-menu-list .right {
+  display: inline-block;
+  width: 75%;
+  /* (100-w1)% */
+  vertical-align: top;
+}
+
+ion-card {
+  border-radius: 15px !important;
+}
+
 page-personalprofile ion-card {
   overflow: visible;
   margin-top: 200px;
@@ -72994,444 +73041,6 @@ page-personalprofile ion-card ion-card-content img {
 
 .picturebg {
   background-color: #000;
-}
-
-page-account-list .customAccDesc {
-  text-align: left;
-  height: 40px;
-  font: 22px 'PT Sans Narrow', sans-serif;
-  font-weight: bold;
-  padding-left: 16px;
-  color: #444;
-  font-size: 20px;
-}
-
-page-account-list .customAccAmt {
-  text-align: right;
-  height: 40px;
-  font: 20px 'PT Sans Narrow', sans-serif;
-  font-weight: bold;
-  margin-top: -10px;
-  margin-right: 15px;
-}
-
-page-account-list .customAccAmt span {
-  position: relative;
-  top: 8px;
-}
-
-page-account-list .customAccAmt span small {
-  position: absolute;
-  font: 16px 'PT Sans Narrow', sans-serif;
-  top: 23px;
-  right: 0;
-  color: #A0A0A0;
-  font-weight: bold;
-}
-
-page-account-list .ml-item {
-  padding: 0;
-}
-
-page-account-list .textRed {
-  color: #CE1B31;
-}
-
-page-account-list .textBlack {
-  color: #000;
-}
-
-page-account-list .textGreen {
-  color: #1AAC57;
-}
-
-page-account-list .iconpadding {
-  padding-left: 19px;
-  padding-right: 19px;
-}
-
-page-account-list .list-ios ion-item-options {
-  border-bottom-width: 0;
-}
-
-page-category-list ion-item-sliding[track=income] ion-label {
-  border-left: 2px solid #28a54c;
-  padding-left: 10px;
-}
-
-page-category-list ion-item-sliding[track=income].mlindent {
-  padding-left: 20px;
-}
-
-page-category-list ion-item-sliding[track=expense] ion-label {
-  border-left: 2px solid #CE1B31;
-  padding-left: 10px;
-}
-
-page-category-list ion-item-sliding[track=expense].mlindent {
-  padding-left: 20px;
-}
-
-page-category-list .item-block {
-  min-height: 5.5rem;
-}
-
-page-category-list .iconpadding {
-  padding-left: 17px;
-  padding-right: 17px;
-}
-
-page-payee-list .item-block {
-  min-height: 5.5rem;
-}
-
-page-payee-list .iconpadding {
-  padding-left: 17px;
-  padding-right: 17px;
-}
-
-page-transaction-list .customTransDesc {
-  text-align: left;
-  font: 22px 'PT Sans Narrow', sans-serif;
-  font-weight: bold;
-  padding-left: 10px;
-  color: #444;
-}
-
-page-transaction-list .customTransDesc span small {
-  position: absolute;
-  font: 13px -apple-system, "Helvetica Neue", "Roboto", sans-serif;
-  top: 32px;
-  left: -25px;
-  color: #A0A0A0;
-  font-weight: normal;
-}
-
-page-transaction-list .customTransDesc span small ul {
-  display: block;
-  list-style-type: none;
-}
-
-page-transaction-list .customTransDesc span small ul li {
-  float: left;
-  margin-right: 8px;
-  font: 14px -apple-system, "Helvetica Neue", "Roboto", sans-serif;
-}
-
-page-transaction-list .customTransDesc span small ul li ion-icon {
-  font-size: 14px;
-  padding-right: 3px;
-}
-
-page-transaction-list .customTransDesc .fa {
-  padding-right: 4px;
-}
-
-page-transaction-list .customTransAmt {
-  font: 20px 'PT Sans Narrow', sans-serif;
-  font-weight: bold;
-  color: #444;
-  font-size: 20px;
-}
-
-page-transaction-list .customRunBal {
-  font: 18px 'PT Sans Narrow', sans-serif;
-  color: #A0A0A0;
-  font-weight: bold;
-  margin-top: -25px;
-}
-
-page-transaction-list .transactionIsCleared .item-content {
-  background-color: #eee;
-  transition: all linear 0.5s;
-}
-
-page-transaction-list .ml-item {
-  padding: 0;
-}
-
-page-transaction-list .ml-item.item-block ion-label {
-  padding: 0;
-  margin-right: 0;
-}
-
-page-transaction-list .Expense {
-  color: #CE1B31;
-}
-
-page-transaction-list .textBlack {
-  color: #000;
-}
-
-page-transaction-list .Income {
-  color: #1AAC57;
-}
-
-page-transaction-list .toggleTransactionCleared {
-  height: auto;
-  margin: auto 0;
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  background-color: transparent;
-}
-
-page-transaction-list .toggleTransactionCleared:after {
-  content: '\f00c';
-  line-height: 43px;
-  font-size: 17px;
-  color: #ebebeb;
-  text-shadow: 0 -1px 0 #bfbfbf;
-  font-family: FontAwesome;
-}
-
-page-transaction-list .toggleTransactionCleared:checked:after {
-  color: #00A2E8;
-  bottom: 1px;
-  position: relative;
-}
-
-page-transaction-list ion-item-divider ion-label {
-  text-transform: uppercase;
-  color: #6d6d72;
-  font-size: 12px;
-}
-
-page-transaction-list .center {
-  text-align: center;
-}
-
-page-transaction-list .balancesRow {
-  font-weight: bold;
-  font: 13px 'PT Sans Narrow', sans-serif;
-  text-align: center;
-}
-
-page-transaction-list .balancesRow span {
-  display: block;
-  font-weight: normal;
-  font-size: 15px;
-}
-
-page-transaction-list .colBorder {
-  border-right: 1px solid #AED9E3;
-}
-
-page-transaction-list .fab ion-icon {
-  font-size: 3.4rem;
-  font-weight: bolder;
-}
-
-page-transaction-list .fab {
-  width: 65px;
-  height: 65px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-}
-
-page-transaction-list .header-md {
-  border-width: 0;
-}
-
-page-transaction-list .header-wp {
-  border-width: 0;
-}
-
-page-transaction-list .ml-row {
-  height: 55px;
-}
-
-page-transaction-list .ml-col-2 {
-  max-width: 150px;
-  text-align: right;
-}
-
-page-transaction-list .ml-col-3 {
-  max-width: 55px;
-  padding-left: 15px;
-}
-
-page-transaction-list .ml-clear-col {
-  max-width: 45px;
-}
-
-page-transaction-list .item-divider-md {
-  border-bottom-width: 0;
-}
-
-page-transaction-list .iconpadding {
-  padding-left: 19px;
-  padding-right: 19px;
-}
-
-page-transaction-list .list-ios ion-item-options {
-  border-bottom-width: 0;
-}
-
-page-transaction-list .item.item-ios .checkbox-ios {
-  margin: 8px 16px 8px -5px;
-}
-
-page-transaction-list .item.item-md .checkbox-md {
-  margin: 9px 36px 9px -4px;
-}
-
-page-transaction-list .list-ios .item-block .item-inner {
-  border-bottom: 0.75px solid #c8c7cc;
-}
-
-page-transaction-list .ml-item.ml-no-border.item-block .item-inner {
-  border-bottom-width: 0;
-}
-
-page-pickaccountfrom .item-block {
-  min-height: 5.5rem;
-}
-
-page-pickaccountto .item-block {
-  min-height: 5.5rem;
-}
-
-page-pickamount {
-  /* Numeric Pad
-  ===============================================*/
-}
-
-page-pickamount .resultAmount {
-  border: 0;
-  display: block;
-  width: 100%;
-  height: 60px;
-  padding-right: 10px;
-  background-color: #000;
-  color: #FFF;
-  font-family: "PT Sans Narrow";
-  font-size: 28px;
-}
-
-page-pickamount .resultAmount input {
-  text-align: right;
-  padding-right: 10px;
-}
-
-page-pickamount ion-grid {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  width: 100%;
-  max-width: 500px;
-}
-
-page-pickamount ion-row {
-  padding: 0;
-  border-top: 0;
-  border-bottom: 0;
-  background-color: yellow;
-}
-
-page-pickamount ion-col {
-  border: 0.55px solid #f5f5f5;
-  padding: 0;
-}
-
-page-pickamount ion-col button {
-  text-align: center;
-  font-size: 28px;
-  width: 100%;
-  min-height: 75px;
-  padding: 0;
-  border: 0;
-  color: #000;
-  background-color: #d0d1d4;
-  font-family: "PT Sans Narrow";
-}
-
-page-pickamount .functionKey.activated {
-  background-color: #ea7d05;
-  color: #fff;
-}
-
-page-pickamount .activated {
-  color: #fff;
-  background-color: #babbbe;
-}
-
-page-pickamount .outer {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-page-pickamount .outer:after {
-  content: "";
-  clear: both;
-}
-
-page-pickamount .outer > div {
-  width: 25%;
-  min-height: 75px;
-  padding-top: 20px;
-  text-align: center;
-  border: 0.75px solid #fff;
-  float: left;
-  /*margin: -1px 0 0 -1px;*/
-  font: 28px 'PT Sans Narrow', sans-serif;
-  color: #000;
-  background-color: #d0d1d4;
-  vertical-align: middle;
-}
-
-page-pickamount div.functionKey {
-  background-color: #F98E12;
-  color: #fff;
-}
-
-page-pickamount div.disabledKey {
-  background-color: dimgray;
-}
-
-page-pickcategory button[track=expense] .label {
-  border-left: 2px solid #CE1B31;
-  padding-left: 10px;
-}
-
-page-pickcategory .mlindent {
-  padding-left: 35px;
-}
-
-page-pickcategory button[track=income] .label {
-  border-left: 2px solid #28a54c;
-  padding-left: 10px;
-}
-
-page-pickcategory .mlindent {
-  padding-left: 35px;
-}
-
-page-pickdefaultbalance .divhelptext {
-  margin-top: -45px;
-  color: #6d6d72;
-}
-
-page-pickdefaultdate .divhelptext {
-  margin-top: -45px;
-  color: #6d6d72;
-}
-
-page-picknotes .item-ios.item-block .item-inner {
-  border-bottom-width: 0;
-}
-
-page-pickphoto .picturebg {
-  background-color: #000;
-}
-
-page-picktransactiontype .item-block {
-  min-height: 5.5rem;
 }
 
 ion-avatar.mlavatar {
@@ -73566,10 +73175,6 @@ page-tutorial .divImage i {
 
 page-tutorial .introGreen {
   background-color: #28a54c;
-}
-
-page-tutorial .introRed {
-  background-color: red;
 }
 
 page-tutorial .introOrange {

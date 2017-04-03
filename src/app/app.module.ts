@@ -20,18 +20,12 @@ import { ProfileDetailsPage } from '../pages/myinfo/profiledetails/profiledetail
 import { PersonalProfilePhotoPage } from '../pages/myinfo/personalprofilephoto/personalprofilephoto';
 
 // my account pages
-import { AccountPage } from '../pages/mymoney/account/account';
-import { AccountListPage } from '../pages/mymoney/account-list/account-list';
-import { BudgetListPage } from '../pages/mymoney/budget-list/budget-list';
-import { CategoryPage } from '../pages/mymoney/category/category';
-import { CategoryListPage } from '../pages/mymoney/category-list/category-list';
-import { PayeeListPage } from '../pages/mymoney/payee-list/payee-list';
-import { PayeePage } from '../pages/mymoney/payee/payee';
-import { RecurringListPage } from '../pages/mymoney/recurring-list/recurring-list';
-import { ReportListPage } from '../pages/mymoney/report-list/report-list';
-import { TransactionsPage } from '../pages/mymoney/transaction-list/transaction-list';
-import { TransactionPage } from '../pages/mymoney/transaction/transaction';
-
+import { DashboardPage } from '../pages/myaccount/dashboard/dashboard';
+import { MenuListPage } from '../pages/myaccount/menu-list/menu-list';
+import { EventsListPage } from '../pages/myaccount/events-list/events-list';
+import { HistoryListPage } from '../pages/myaccount/history-list/history-list';
+import { OffersListPage } from '../pages/myaccount/offers-list/offers-list';
+import { AwardsListPage } from '../pages/myaccount/awards-list/awards-list';
 
 // mysettings
 import { SettingsPage } from '../pages/mysettings/settings/settings';
@@ -41,9 +35,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 
 // services
 import { UserData } from '../providers/user-data';
-//import { TransactionData } from '../providers/transaction-data';
 //import { AccountData } from '../providers/account-data';
-//import { CategoryData } from '../providers/category-data';
 
 //Angular Fire 2
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -62,6 +54,15 @@ const firebaseAuthConfig = {
   method: AuthMethods.Password
 }
 
+//  IONIC ICLOUD
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'APP_ID'
+  }
+};
+
+
 @NgModule({
   declarations: [
     BrewApp,
@@ -77,17 +78,12 @@ const firebaseAuthConfig = {
     PersonalProfilePage,
     ProfileDetailsPage,
     PersonalProfilePhotoPage,
-    AccountPage,
-    AccountListPage,
-    BudgetListPage,
-    CategoryPage,
-    CategoryListPage,
-    PayeeListPage,
-    PayeePage,
-    RecurringListPage,
-    ReportListPage,
-    TransactionsPage,
-    TransactionPage,
+    DashboardPage,
+    MenuListPage,
+    EventsListPage,
+    HistoryListPage,
+    OffersListPage,
+    AwardsListPage,
     SettingsPage,
     SignupPage,
     TutorialPage
@@ -97,6 +93,7 @@ const firebaseAuthConfig = {
       popoverEnter: 'popover-md-pop-in',
       popoverLeave: 'popover-md-pop-out'
     }),
+    CloudModule.forRoot(cloudSettings),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   bootstrap: [IonicApp],
@@ -114,17 +111,12 @@ const firebaseAuthConfig = {
     PersonalProfilePage,
     ProfileDetailsPage,
     PersonalProfilePhotoPage,
-    AccountPage,
-    AccountListPage,
-    BudgetListPage,
-    CategoryPage,
-    CategoryListPage,
-    PayeeListPage,
-    PayeePage,
-    RecurringListPage,
-    ReportListPage,
-    TransactionsPage,
-    TransactionPage,
+    DashboardPage,
+    MenuListPage,
+    EventsListPage,
+    HistoryListPage,
+    OffersListPage,
+    AwardsListPage,
     SettingsPage,
     SignupPage,
     TutorialPage

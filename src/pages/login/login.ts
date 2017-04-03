@@ -5,7 +5,7 @@ import { AlertController, MenuController , NavController } from 'ionic-angular';
 // app pages
 import { SignupPage } from '../signup/signup';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
-import { AccountListPage } from '../mymoney/account-list/account-list';
+import { DashboardPage} from '../myaccount/dashboard/dashboard';
 
 // services
 import { UserData } from '../../providers/user-data';
@@ -25,7 +25,7 @@ export class LoginPage {
     public navCtrl: NavController,
     public userData: UserData) {
 
-    this.login.email = 'username@test.com';
+    this.login.email = 'Your E-mail';
 
    }
 
@@ -50,14 +50,14 @@ export class LoginPage {
 
   LoginSuccess() {
     setTimeout(() => {
-      this.navCtrl.setRoot(AccountListPage, {}, {animate: true, direction: 'forward'});
+      this.navCtrl.setRoot(DashboardPage, {}, {animate: true, direction: 'forward'});
     }, 1000);
   }
 
   LoginError(error) {
     let alert = this.alertController.create({
       title: 'Login Failed',
-      subTitle: 'Please check your username and password and try again',
+      subTitle: 'Please check your email and/or password and try again',
       buttons: [
         {
           text: 'Ok',

@@ -16,15 +16,7 @@
         <span class="mlmenuitem">{{p.title}}</span>
       </button>
     </ion-list>
-    <ion-list>
-      <ion-list-header>
-        Account
-      </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of logoutpages" (click)="logout()">
-        <ion-icon item-left [name]="p.icon" [ngStyle]="{'color':p.color}"></ion-icon>
-        <span class="mlmenuitem">{{p.title}}</span>
-      </button>
-    </ion-list>
+
   </ion-content>
 
 </ion-menu>
