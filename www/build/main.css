@@ -84714,6 +84714,11 @@ page-logout .logoutScreen {
   text-align: center;
 }
 
+.chart-sub-title {
+  color: #FFFFFF;
+  font-variant-caps: all-small-caps;
+}
+
 ion-card.card-background {
   border-color: transparent;
   background-color: transparent;

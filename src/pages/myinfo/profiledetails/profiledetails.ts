@@ -16,18 +16,12 @@ declare var firebase: any;
 })
 
 export class ProfileDetailsPage {
-  
+
   fullname: string;
   nickname: string;
-  housename: string;
-  housenumber: string;
-  paymentplan: string;
 
   hasDataProfileFullName: boolean = false;
   hasDataProfileNickname: boolean = false;
-  hasDataProfileHouseName: boolean = false;
-  hasDataProfileHouseNumber: boolean = false;
-  hasDataProfilePaymentPlan: boolean = false;
 
   constructor(
     public nav: NavController,
@@ -43,21 +37,7 @@ export class ProfileDetailsPage {
       this.hasDataProfileNickname = true;
       this.nickname = this.userData.user.nickname;
     }
-    
-    if (this.userData.user.housename != '') {
-      this.hasDataProfileHouseName = true;
-      this.housename = this.userData.user.housename;
-    }
 
-    if (this.userData.user.housenumber != '') {
-      this.hasDataProfileHouseNumber = true;
-      this.housenumber = this.userData.user.housenumber;
-    }
-    
-    if (this.userData.user.paymentplay != '') {
-      this.hasDataProfilePaymentPlan = true;
-      this.paymentplan = this.userData.user.paymentplan;
-    }
   }
 
   presentActionSheet() {
@@ -106,5 +86,5 @@ export class ProfileDetailsPage {
     });
     actionSheet.present();
   }
-  
+
 }
