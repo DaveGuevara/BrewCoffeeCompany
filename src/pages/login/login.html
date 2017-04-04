@@ -6,14 +6,24 @@
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
+
+
 <ion-content class="loginScreen">
-  <ion-list>       
+  <ion-list>
+
+    <br/><br/><br/><br/><br/><br/>
+
     <div id="divHeading">
-      <ion-icon name="ios-lock-outline"></ion-icon>
+      <!--<ion-icon name="ios-lock-outline"></ion-icon>-->
+      <img src="../../assets/img/Brew-logo-white.png" />
     </div>
+
+    <br/><br/><br/><br/><br/>
+
     <div id="divLoginForm">
       <form #loginForm="ngForm" novalidate id="loginFormId">
-        <button block (click)="onLogin(loginForm)"><ion-icon name="ios-power"></ion-icon></button>
+        <button block (click)="onLogin(loginForm)"><ion-icon name="log-in"></ion-icon></button>
+
         <ion-input [(ngModel)]="login.email" type="email" name="email" placeholder="email" #email="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
         <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
           Email is required
@@ -24,6 +34,9 @@
         </p>
       </form>
     </div>
+
+    <br/>
+
     <div id="divLinks">
       <button ion-button (click)="onForgotPassword()" clear class="mlLinks">Forgot Password?</button>
       <button ion-button (click)="onSignup()" clear class="mlLinks right">Sign Up</button>

@@ -17,11 +17,22 @@
 
   <ion-card class="card-background">
     <ion-card-content>
+
       <div class="chart">
+        <canvas #doughnutCanvas></canvas>
       </div>
+
       <br/><br/>
-      <button ion-button block color="mlgreen" name="earn">Earn</button>
-      <button ion-button block color="mlgreen" name="redeem">Redeem</button>
+      <div class="chart-sub-title">
+          AVAILABLE POINTS:  3
+      </div>
+      <br/><br/><br/><br/>
+
+      <div>
+        UNLOCK $5 FOR 10 POINTS EARNED
+        <button ion-button block color="mlwhite" name="earn" (click)="Earn()"><b>EARN</b></button>
+        <button ion-button block color="mllightgray" name="redeem"><b>REDEEM</b></button>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

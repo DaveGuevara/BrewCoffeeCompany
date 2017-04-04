@@ -8,8 +8,9 @@
 </ion-header>
 
 
-<ion-content>
-  <ion-list>
+<ion-content class="grid-basic-page">
+  <ion-card>
+    <ion-list>
       <ion-item-group *ngFor="let group of groupedOffers">
         <ion-item-divider sticky>
           <ion-label>
@@ -23,4 +24,5 @@
         </ion-item>
       </ion-item-group>
     </ion-list>
+  </ion-card>
 </ion-content>

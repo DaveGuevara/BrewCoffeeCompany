@@ -1,24 +1,5 @@
 {
   "rules": {
-    "houses": {
-      "$house_id": {
-        // Grants read/write access to the members whose hourseid exactly match the key ($house_id)
-        ".read": "root.child('members').child(auth.uid).child('houseid').val() === $house_id || root.child('users').child(auth.uid).child('houseid').val() === $house_id",
-        ".write": "root.child('members').child(auth.uid).child('houseid').val() === $house_id || root.child('users').child(auth.uid).child('houseid').val() === $house_id",
-        "transactions": {
-          "$transaction_id": {
-            ".indexOn": ["date","type"]
-          }
-        }
-      }
-    },
-    "members": {
-      // Grants read/write access to the member whose id exactly match the key ($uid)
-      "$uid": {
-          ".read": "auth != null && auth.uid === $uid",
-          ".write": "auth != null && auth.uid === $uid"
-      }
-    },
     "users": {
       "$uid": {
         ".read": "auth != null && auth.uid === $uid",
