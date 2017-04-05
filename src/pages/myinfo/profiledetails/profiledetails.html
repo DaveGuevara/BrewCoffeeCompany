@@ -39,7 +39,41 @@
       </div>
       <ion-icon name="arrow-forward" item-right color="mliconarrowblue"></ion-icon>
     </ion-item>
+
+
+
+
+  <ion-item class="ml-input">
+    <ion-icon name="md-contact" item-left></ion-icon>
+    <div *ngIf="hasDataProfileNickname">
+      <button ion-item (click)="openPersonalProfile()">
+        <p>Change Name</p>
+      </button>
+    </div>
+    <div *ngIf="!hasDataProfileNickname">
+      <h2 class="ml-has-no-input">Nickname</h2>
+    </div>
+    <ion-icon name="arrow-forward" item-right color="mliconarrowblue"></ion-icon>
+  </ion-item>
+
+
+  <ion-item class="ml-input">
+    <ion-icon name="md-contact" item-left></ion-icon>
+    <div *ngIf="hasDataProfileNickname">
+      <button ion-item (click)="openPersonalProfile()">
+        <p>Change Password</p>
+      </button>
+    </div>
+    <div *ngIf="!hasDataProfileNickname">
+      <h2 class="ml-has-no-input">Nickname</h2>
+    </div>
+    <ion-icon name="arrow-forward" item-right color="mliconarrowblue"></ion-icon>
+  </ion-item>
+
+
   </ion-list>
+
+
 </ion-content>
 
 <ion-footer>
