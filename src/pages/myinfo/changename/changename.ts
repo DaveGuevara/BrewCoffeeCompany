@@ -9,26 +9,27 @@ import { UserData } from '../../../providers/user-data';
   templateUrl: 'changename.html'
 })
 
-export class ChangeNamePage { 
-  
+export class ChangeNamePage {
+
   newname: string = '';
   account: any;
 
   constructor(
-    public viewCtrl: ViewController, 
+    public viewCtrl: ViewController,
     public navParams: NavParams,
     public userData: UserData) {
-    
+
     this.newname = this.navParams.data.paramFullName;
 
   }
-  
+
   changeName(newname) {
-    this.viewCtrl.dismiss(newname);
+//    this.viewCtrl.dismiss(newname);
+ this.userData.updateName(newname);
   }
-  
+
   dismiss() {
     this.viewCtrl.dismiss();
   }
-    
+
 }
