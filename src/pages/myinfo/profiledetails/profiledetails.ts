@@ -7,6 +7,10 @@ import { NavController, ActionSheetController } from 'ionic-angular';
 // services
 import { UserData } from '../../../providers/user-data';
 
+import { ChangeNamePage } from '../../myinfo/changename/changename';
+import { ChangePasswordPage } from '../../myinfo/changepassword/changepassword';
+
+
 // firebase
 declare var firebase: any;
 
@@ -40,51 +44,12 @@ export class ProfileDetailsPage {
 
   }
 
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Profile Options',
-      buttons: [
-        {
-          text: 'Change Email',
-          handler: () => {
-            console.log('email clicked');
-          }
-        },
-        {
-          text: 'Change Password',
-          handler: () => {
-            console.log('pwd clicked');
-          }
-        },
-        {
-          text: 'Change Picture',
-          handler: () => {
-            console.log('picture clicked');
-          }
-        },
-        {
-          text: 'Logout',
-          handler: () => {
-            console.log('logout clicked');
-          }
-        },
-        {
-          text: 'Delete all',
-          role: 'destructive',
-          handler: () => {
-            console.log('delete all clicked');
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
+  changeName() {
+    this.nav.push(ChangeNamePage);
+  }
+
+  changePassword() {
+    this.nav.push(ChangePasswordPage);
   }
 
 }
