@@ -86,7 +86,7 @@ export class BrewApp {
   }
 
   logout() {
-    this.userData.logout();
+  //  this.userData.logout();
     this.nav.setRoot(LogoutPage);
   }
 
