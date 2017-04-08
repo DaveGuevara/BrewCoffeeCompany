@@ -6,7 +6,7 @@
     <ion-title>
       Profile Details
     </ion-title>
-    
+
   </ion-navbar>
 </ion-header>
 
@@ -24,8 +24,12 @@
       </button>
       </div>
       <div *ngIf="!hasDataProfileFullName">
+          <button ion-item (click)="changeName()">
         <h2 class="ml-has-no-input">Full Name</h2>
+      </button>
       </div>
+
+
       <ion-icon name="arrow-forward" item-right color="mliconarrowblue"></ion-icon>
     </ion-item>
     <ion-item class="ml-input">
