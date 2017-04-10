@@ -6,21 +6,42 @@
     <ion-title>
       Earn Rewards
     </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="save()">Save</button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 
+<br><br><br>
 <ion-content class="grid-basic-page">
+  <br/><br/>
+  <ion-card class="earn-card">
+    <br/><br/><br/><br/>
+    <ion-list>
+      <ion-item>
+        <ion-label>Points</ion-label>
+        <ion-select [(ngModel)]="points">
+          <ion-option value="0.5">0.5</ion-option>
+          <ion-option value="1">1</ion-option>
+          <ion-option value="1.5">1.5</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="2.5">2.5</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="3.5">3.5</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="4.5">4.5</ion-option>
+          <ion-option value="5">5</ion-option>
+        </ion-select>
+      </ion-item>
+      <br/><br/><br/><br/>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" placeholder="Enter Password"></ion-input>
+      </ion-item>
+    </ion-list>
 
-  <ion-card>
-    Submit the earn points here
-  </ion-card>
+    <br/><br/><br/><br/><br/><br/><br/>
+      <button ion-button block color="mliconarrowblue" name="earn">Earn</button>
+    <br/><br/><br/><br/>
+</ion-card>
 
-  <ion-fab center bottom>
-    <button ion-button block color="mlgreen" name="earn">Earn</button>
-  </ion-fab>
 </ion-content>

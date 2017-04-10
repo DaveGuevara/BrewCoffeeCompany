@@ -286,7 +286,11 @@ export class UserData {
     this.rewardsdata.child(this.userauth.uid + "/rewards/").push({ points: item.points });
     //this.updateAccountTypesCounter('add');
   }
-
+  getRewardsPoints()
+  {
+    //return this.af.database.list('/rewards/' + this.userauth.uid);
+    return this.rewardsdata.child(this.user.rewardsid + '/earn');
+  }
   //
   // AWARDS
   //-----------------------------------------------------------------------

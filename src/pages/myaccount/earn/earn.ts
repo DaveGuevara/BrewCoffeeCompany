@@ -21,8 +21,9 @@ export class EarnPage {
 
     }
 
-  ionViewWillEnter() {
-    
-  }
+    ionViewDidLoad(){
+     //ionViewWillEnter() {
+       this.userData.LoadingControllerDismiss();
+     }
 
 }
