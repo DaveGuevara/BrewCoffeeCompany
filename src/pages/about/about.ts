@@ -7,14 +7,10 @@ import { UserData } from '../../providers/user-data';
 
 @Component({
   template: `
-    <ion-list>
-      <button ion-item (click)="close()">Learn Ionic</button>
-      <button ion-item (click)="close()">Documentation</button>
-      <button ion-item (click)="close()">Showcase</button>
-      <button ion-item (click)="close()">GitHub Repo</button>
-    </ion-list>
+  
   `
 })
+
 export class PopoverPage {
 
   constructor(public viewCtrl: ViewController) { }

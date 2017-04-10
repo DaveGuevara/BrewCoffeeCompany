@@ -16,7 +16,7 @@ import { UserData } from '../../../providers/user-data';
 })
 export class SettingsPage {
 
-  appversion = '';
+  appversion = '2.3';
   imgsrc: string;
 
   constructor(

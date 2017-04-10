@@ -9,20 +9,21 @@ import { UserData } from '../../../providers/user-data';
   templateUrl: 'changepassword.html'
 })
 
-export class ChangePasswordPage { 
-  
+export class ChangePasswordPage {
+
   newpassword: string = '';
-        
+
   constructor(
       public viewCtrl: ViewController,
-      public userData: UserData) {}  
- 
+      public userData: UserData) {}
+
   changePassword(newpassword) {
-    this.viewCtrl.dismiss(newpassword);
+  //  this.viewCtrl.dismiss(newpassword);
+  this.userData.updatePassword(newpassword);
   }
-  
+
   dismiss() {
     this.viewCtrl.dismiss();
   }
-    
+
 }
