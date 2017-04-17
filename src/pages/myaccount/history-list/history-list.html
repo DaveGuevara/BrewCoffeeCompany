@@ -14,6 +14,20 @@
         <ion-item-divider sticky>
           <ion-label>
             {{group.date}}
+            <ion-item *ngFor="let history of group.history" #slidingItem>
+                Date: {{ history.date}} -
+                Type: {{ history.type}} -
+                Points: {{ history.points}}
+            </ion-item>
+
+            <div class="row">
+                <div class="col">{{group.date}}</div>
+                <div class="col">{{group.date}}</div>
+                <div class="col">{{group.date}}</div>
+                <div class="col">{{group.date}}</div>
+                <div class="col">{{group.date}}</div>
+            </div>
+
           </ion-label>
         </ion-item-divider>
         <ion-item *ngFor="let history of group.history" #slidingItem>
