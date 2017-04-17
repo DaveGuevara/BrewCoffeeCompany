@@ -12,21 +12,10 @@
     <ion-list>
       <ion-item-group *ngFor="let group of groupedHistory">
         <ion-item-divider sticky>
-          <ion-label>
-            {{group.date}}
-            <ion-item *ngFor="let history of group.history" #slidingItem>
-                Date: {{ history.date}} -
-                Type: {{ history.type}} -
-                Points: {{ history.points}}
-            </ion-item>
+          <ion-label *ngFor="let history of group.history" #slidingItem>
 
-            <div class="row">
-                <div class="col">{{group.date}}</div>
-                <div class="col">{{group.date}}</div>
-                <div class="col">{{group.date}}</div>
-                <div class="col">{{group.date}}</div>
-                <div class="col">{{group.date}}</div>
-            </div>
+            Points: {{history.date}} - Rewards: {{history.date}} - Items: {{history.date}}
+
 
           </ion-label>
         </ion-item-divider>
