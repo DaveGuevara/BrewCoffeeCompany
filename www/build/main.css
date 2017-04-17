@@ -84745,6 +84745,12 @@ ion-card.card-background {
   background-color: #FFFFFF;
 }
 
+#firstname {
+  background-color: #F0FFFF;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
 page-menu-list .customized-image {
   max-height: 75px !important;
 }
