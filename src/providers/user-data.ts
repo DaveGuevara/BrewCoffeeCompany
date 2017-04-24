@@ -136,7 +136,7 @@ export class UserData {
   }
   createDefaultHistory(){
     var refTypes = this.rewardsdata.child(this.user.rewardsid + "/history/");
-       refTypes.push({ name: 'Join', type: 'join-award', points: '0' });
+       refTypes.push({ name: 'Join', type: 'join-award', points: '0', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
   }
 
 
@@ -282,24 +282,34 @@ export class UserData {
   getRewards(uid): FirebaseListObservable<any[]> {
     return this.af.database.list('/rewards/' + this.userauth.uid);
   }
-  addRewardsPoints(item) {
-    this.rewardsdata.child(this.userauth.uid + "/rewards/").push({ points: item.points });
-    //this.updateAccountTypesCounter('add');
+  addRewardsPoints(points) {
+    this.rewardsdata.child(this.user.rewardsid + "/earn/").update({ 'points' : points });
   }
   getRewardsPoints()
   {
-    //return this.af.database.list('/rewards/' + this.userauth.uid);
     return this.rewardsdata.child(this.user.rewardsid + '/earn');
   }
+
   //
   // AWARDS
   //-----------------------------------------------------------------------
-  getAwards(uid): FirebaseObjectObservable<any[]> {
-    return this.af.database.object('/awards/' + this.userauth.uid);
+  getAwardsList() {
+    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('createdDate');
   }
-  redeemAwards(item) {
-    this.rewardsdata.child(this.userauth.uid + "/rewards/").push({ redeemed: item.redeemed });
-    //this.updateAccountTypesCounter('add');
+  addAwards(){
+    var newAward = this.rewardsdata.child(this.user.rewardsid + "/awards/");
+    newAward.push({ name: 'Earn', type: 'earn-award', description: 'You have earned 10 points, that gives you $5 credit to your next purchase.', icon: 'ios-cash-outline', reedeemed: 'false', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
+  }
+  redeemAwards(awardID) {
+    this.rewardsdata.child(this.userauth.uid + "/rewards/" + awardID).push({ redeemed: true });
+  }
+  getOpenAward(){
+    //return this.af.database.list('/rewards/' + this.user.rewardsid + '/awards/', {
+    //  query: {
+    //    orderByChild: 'createdDate'
+    //  }
+    //}).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('datecreated').limitToFirst(1);
   }
 
   //
@@ -308,14 +318,10 @@ export class UserData {
   getHistoryList() {
     return this.rewardsdata.child(this.user.rewardsid + '/history').orderByChild('datecreated');
   }
-/*  addHistory(points) {
-    var newHistory = {
-        'points': points,
-        'dateCreated': firebase.database['ServerValue']['TIMESTAMP']
-    }
-    this.historydata.child(this.userauth.uid).push(newHistory);
+  addHistory(name, type, points) {
+    var newHistory = this.rewardsdata.child(this.user.rewardsid + "/history/");
+    newHistory.push({ name: name, type: type, points: points, createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
   }
-*/
 
  //
  // OFFERS

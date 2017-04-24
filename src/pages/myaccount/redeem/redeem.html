@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Redeem Reward
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<br>
+
+<ion-content class="grid-basic-page">
+  <br/>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Redeem your BREW award!
+      </ion-card-title>
+      <br/>
+      <p>
+          {{ award.description }}
+      </p>
+      <div class="redeem_image">
+        <img src="../../assets/img/cash_redeem.png" class="">
+      </div>
+      <br/>
+      <div text-center>
+        <span class="unlock"> You can only use this award once, please wait until you are ready to redeem your award.</span>
+        <button ion-button block color="mlgreen" name="redeem" (click)="useAward()"><b>REDEEM</b></button>
+      </div>
+    </ion-card-content>
+
+    <br/><br/>
+  </ion-card>
+
+</ion-content>

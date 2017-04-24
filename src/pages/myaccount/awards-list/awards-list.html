@@ -9,9 +9,21 @@
 
 
 <ion-content class="grid-basic-page">
-
   <ion-card>
-    content goes here
+    <ion-list>
+      <ion-item-group *ngFor="let group of groupedAwards">
+        <ion-item-divider sticky>
+          <ion-label>
+            {{group.date  | date: "MM/dd/yyyy" }}
+          </ion-label>
+        </ion-item-divider>
+        <ion-item *ngFor="let award of group.awards" #slidingItem>
+            Icon: {{ award.icon }} <br/>
+            Type: {{ award.type}} -
+            Name: {{ award.name }} <br/>
+            Description: {{ award.description }}
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
   </ion-card>
-
 </ion-content>

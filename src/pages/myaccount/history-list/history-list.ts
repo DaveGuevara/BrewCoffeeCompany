@@ -24,20 +24,22 @@ export class HistoryListPage {
         var that = this;
         this.groupedHistory = [];
         let currentHistory = [];
-        let currentDate = false;
+        let currentDate;
+        history.reverse;
 
         history.forEach(snapshot => {
           let hist = snapshot.val();
           let tempHistory = ({
             $key: snapshot.key,
-            date: hist.date,
+            //date: hist.date,
             points: hist.points,
             type: hist.type,
-            datecreated: hist.dateCreated
+            //datecreated: new Date(hist.createdDate).toDateString()
+            datecreated: new Date(hist.createdDate).toLocaleDateString()
           });
 
-          if (tempHistory.date != currentDate){
-            currentDate = tempHistory.date;
+          if (tempHistory.datecreated != currentDate){
+            currentDate = tempHistory.datecreated;
             let newGroup = {
               date: currentDate,
               history: []
