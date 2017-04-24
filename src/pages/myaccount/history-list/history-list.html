@@ -13,12 +13,13 @@
       <ion-item-group *ngFor="let group of groupedHistory">
         <ion-item-divider sticky>
           <ion-label>
+            <!--{{group.date | date: "MM/dd/yyyy" }} -->
             {{group.date}}
           </ion-label>
         </ion-item-divider>
         <ion-item *ngFor="let history of group.history" #slidingItem>
-            Date: {{ history.date}} -
-            Type: {{ history.type}} -
+            <!--Date: {{ history.date | date: "MM/dd/yyyy" }} -->
+            <b>Type: {{ history.type}}</b>
             Points: {{ history.points}}
         </ion-item>
       </ion-item-group>

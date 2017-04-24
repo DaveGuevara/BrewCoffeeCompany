@@ -5,7 +5,7 @@
     </button>
     <ion-title>
        <div class="titleicon">
-         <img src="../../assets/img/Brew-logo-white.png" width="100px" />
+         <img src="../../../assets/img/Brew-logo-white.png" width="100px" />
        </div>
     </ion-title>
   </ion-navbar>
@@ -21,14 +21,14 @@
       </div>
       <br/>
       <div text-center class="chart-sub-title">
-        AVAILABLE POINTS:  {{earn?.points}}
+        CURRENT VISITS:  {{earn?.points}}
       </div>
-      <br/><br/><br/><br/>
+      <br/><br/>
 
       <div text-center>
-        UNLOCK $5 FOR 10 POINTS EARNED
+        <span class="unlock"> GET $5 OFF AFTER 10 VISITS</span>
         <button ion-button block color="mlwhite" name="earn" (click)="Earn()"><b>EARN</b></button>
-        <button ion-button block color="mllightgray" name="redeem"><b>REDEEM</b></button>
+        <button ion-button block color="mllightgray" name="redeem" (click)="Redeem()"><b>REDEEM</b></button>
       </div>
     </ion-card-content>
   </ion-card>

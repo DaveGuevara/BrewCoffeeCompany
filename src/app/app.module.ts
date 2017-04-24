@@ -27,6 +27,7 @@ import { HistoryListPage } from '../pages/myaccount/history-list/history-list';
 import { OffersListPage } from '../pages/myaccount/offers-list/offers-list';
 import { AwardsListPage } from '../pages/myaccount/awards-list/awards-list';
 import { EarnPage } from '../pages/myaccount/earn/earn';
+import { RedeemPage } from '../pages/myaccount/redeem/redeem';
 
 // mysettings
 import { SettingsPage } from '../pages/mysettings/settings/settings';
@@ -88,7 +89,8 @@ const cloudSettings: CloudSettings = {
     SettingsPage,
     SignupPage,
     TutorialPage,
-    EarnPage
+    EarnPage,
+    RedeemPage,
   ],
   imports: [
     IonicModule.forRoot(BrewApp, {
@@ -122,7 +124,8 @@ const cloudSettings: CloudSettings = {
     SettingsPage,
     SignupPage,
     TutorialPage,
-    EarnPage
+    EarnPage,
+    RedeemPage,
   ],
   //providers: [UserData, TransactionData, AccountData, CategoryData, {provide: ErrorHandler, useClass: IonicErrorHandler}]
   providers: [UserData, {provide: ErrorHandler, useClass: IonicErrorHandler}]

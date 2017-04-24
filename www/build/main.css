@@ -84712,7 +84712,13 @@ page-logout .logoutScreen {
 
 .chart-sub-title {
   color: #FFFFFF;
-  font-variant-caps: all-small-caps;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.unlock {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 ion-card.card-background {
@@ -84721,12 +84727,102 @@ ion-card.card-background {
   color: white;
 }
 
-.grid-basic-page {
-  border-radius: 20px;
-  background-image: url("../assets/img/dashboard.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #FFFFFF;
+page-earn {
+  /* Numeric Pad
+    ===============================================*/
+}
+
+page-earn .resultAmount {
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding-right: 10px;
+  background-color: #000;
+  color: #FFF;
+  font-family: "PT Sans Narrow";
+  font-size: 28px;
+}
+
+page-earn .resultAmount input {
+  text-align: right;
+  padding-right: 10px;
+}
+
+page-earn ion-grid {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+page-earn ion-row {
+  padding: 0;
+  border-top: 0;
+  border-bottom: 0;
+  background-color: yellow;
+}
+
+page-earn ion-col {
+  border: 0.55px solid #f5f5f5;
+  padding: 0;
+}
+
+page-earn ion-col button {
+  text-align: center;
+  font-size: 28px;
+  width: 100%;
+  min-height: 75px;
+  padding: 0;
+  border: 0;
+  color: #000;
+  background-color: #d0d1d4;
+  font-family: "PT Sans Narrow";
+}
+
+page-earn .functionKey.activated {
+  background-color: #ea7d05;
+  color: #fff;
+}
+
+page-earn .activated {
+  color: #fff;
+  background-color: #babbbe;
+}
+
+page-earn .outer {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+page-earn .outer:after {
+  content: "";
+  clear: both;
+}
+
+page-earn .outer > div {
+  width: 25%;
+  min-height: 75px;
+  padding-top: 20px;
+  text-align: center;
+  border: 0.75px solid #fff;
+  float: left;
+  /*margin: -1px 0 0 -1px;*/
+  font: 28px 'PT Sans Narrow', sans-serif;
+  color: #000;
+  background-color: #d0d1d4;
+  vertical-align: middle;
+}
+
+page-earn div.functionKey {
+  background-color: #F98E12;
+  color: #fff;
+}
+
+page-earn div.disabledKey {
+  background-color: dimgray;
 }
 
 .grid-basic-page {
@@ -84773,6 +84869,11 @@ ion-card {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #FFFFFF;
+}
+
+page-redeem redeem_image {
+  width: 80%;
+  height: auto;
 }
 
 page-personalprofile ion-card {

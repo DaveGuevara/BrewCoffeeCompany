@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire } from 'angularfire2';
 
 //  Services
 import { UserData } from '../../../providers/user-data';
 // App page-dashboard
 import { EarnPage } from  '../earn/earn';
+import { RedeemPage } from '../redeem/redeem';
 // Models
 import { Earn } from '../../../models/earn.model';
 // Chart.js
@@ -23,28 +24,32 @@ export class DashboardPage {
   earned: number;
   pending: number;
   percent: number;
+  award: any;
 
   constructor(
     public nav: NavController,
     public alertController: AlertController,
     public userData: UserData) {}
-  /*
-      this.userData.getRewardsPoints().on('value', (data)=> {
-        this.earn = data.val();
-        this.earned = this.earn.points;
-        this.pending = 10 - this.earned;
-        this.percent = (this.earned/10) * 100;
-      });
-    }
- */
 
   ionViewDidLoad() {
+    this.userData.getOpenAward().on('value', (dat)=> {
+      dat.forEach(snapshot => {
+        let tmpAward = snapshot.val();
+        this.award = ({
+          $key: snapshot.key,
+          createdDate: tmpAward.createdDate,
+          description: tmpAward.description,
+          type: tmpAward.type,
+          reedeemed: tmpAward.reedeemed
+        });
+      });
+    })
+
     this.userData.getRewardsPoints().on('value', (data)=> {
       this.earn = data.val();
       this.earned = this.earn.points;
       this.pending = 10 - this.earned;
       this.percent = (this.earned/10) * 100;
-  //  });
 
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
     type: 'doughnut',
@@ -89,15 +94,35 @@ export class DashboardPage {
       }
     });
     });
+
     this.userData.LoadingControllerDismiss();
   }
 
 
   Earn() {
-    let tempEarn = new Earn(null,"1");
-    this.nav.push(EarnPage, {paramAccount: tempEarn});
+    //let tempEarn = new Earn(null,"1");
+    this.nav.push(EarnPage, {currentPoints: this.earned});
   }
 
+  Redeem(){
+    if (this.award != null)
+    {
+      this.nav.push(RedeemPage, {award: this.award });
+    }
+    else
+    {
+      this.showAlert();
+    }
+  }
+
+  showAlert(){
+    let alert = this.alertController.create({
+      title: "Sorry!",
+      subTitle: "you don't have any available credits at this time.",
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }
 
 
