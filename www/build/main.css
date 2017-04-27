@@ -84910,7 +84910,7 @@ ion-card {
 }
 
 page-redeem redeem_image {
-  height: 150px !important;
+  height: 175px !important;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -84939,10 +84939,8 @@ page-redeem .divText {
 }
 
 page-redeem .divImage .i {
-  width: 125px !important;
-  height: 125px !important;
-  border: 5px solid #fff;
-  border-radius: 100%;
+  width: 175px !important;
+  height: 175px !important;
   font-size: 90px;
   line-height: 38px;
   color: #fff;
