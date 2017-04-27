@@ -59,8 +59,8 @@ export class EarnPage {
            break;
          }
          case 'D': {
-           // check to see if the earn code has been used before (today) if not, proceed else show message.
-           if (true)
+           let amt = this.displayValue.toString();
+           if (amt == "1358")
            {
              var NewPoints = Number(this.currentpoints) + Number(1);
              if (NewPoints == 10)
@@ -72,9 +72,14 @@ export class EarnPage {
              }
              this.userData.addRewardsPoints(NewPoints);
              this.userData.addHistory('Earn', 'Purchase', 1);
+             this.showAlert();
+             this.goBack();
            }
-           this.showAlert();
-           this.goBack();
+           else
+           {
+              this.reset();
+              this.showErrorAlert();
+           }
            break;
          }
          default: {
@@ -105,6 +110,15 @@ export class EarnPage {
        let alert = this.alertCtrl.create({
          title: 'You are Done!',
          subTitle: 'your submission has been accepted',
+         buttons: ['OK']
+       });
+       alert.present();
+     }
+
+     showErrorAlert(){
+       let alert = this.alertCtrl.create({
+         title: 'Sorry!',
+         subTitle: 'The redemption code you enter is invalid or it has been used before. Please try again.',
          buttons: ['OK']
        });
        alert.present();

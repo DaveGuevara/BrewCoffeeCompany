@@ -1,7 +1,31 @@
 page-redeem {
   redeem_image{
-    width: 80%;
-    height: auto;
+    height: 150px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divText {
+    display: inline-block;
+  }
+  .divImage .i {
+    width: 125px !important;
+    height: 125px !important;
+    border: 5px solid #fff;
+    border-radius: 100%;
+    font-size: 90px;
+    line-height: 38px;
+    color: #fff;
+    margin: 7% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 }

@@ -29,11 +29,13 @@ export class HistoryListPage {
 
         history.forEach(snapshot => {
           let hist = snapshot.val();
+          let icon = (hist.type == "Purchase" ? "ios-cash-outline" : "ios-trophy-outline");
           let tempHistory = ({
             $key: snapshot.key,
             //date: hist.date,
             points: hist.points,
             type: hist.type,
+            icon: icon,
             //datecreated: new Date(hist.createdDate).toDateString()
             datecreated: new Date(hist.createdDate).toLocaleDateString()
           });

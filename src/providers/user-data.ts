@@ -28,7 +28,7 @@ export class UserData {
   eventdata;
   menudata;
   historylist;
-  profilepicdata;
+  menupicdata;
 
   constructor(
     public af: AngularFire,
@@ -39,7 +39,7 @@ export class UserData {
     this.offersdata = firebase.database().ref('/offers/');
     this.eventdata = firebase.database().ref('/Events/');
     this.menudata = firebase.database().ref('/Menu/');
-    //this.profilepicdata = firebase.storage().ref('/profilepics/');
+    this.menupicdata = firebase.storage().ref('/menu/');
   }
 
   LoadingControllerShow() {
@@ -132,7 +132,7 @@ export class UserData {
   }
   createDefaultAwards(){
     var refTypes = this.rewardsdata.child(this.user.rewardsid + "/awards/");
-       refTypes.push({ name: 'Join', type: 'join-award', description: ' ', icon: 'ios-cash-outline', reedeemed: 'false', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
+       refTypes.push({ name: 'Join', type: 'join-award', description: 'Thank you for Joining! Your next cup of hot Brewed coffee is on us.', icon: 'ios-cash-outline', reedeemed: 'false', code: 'VXZ12', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
   }
   createDefaultHistory(){
     var refTypes = this.rewardsdata.child(this.user.rewardsid + "/history/");
@@ -264,11 +264,14 @@ export class UserData {
     });
   }
   savePicture(pic) {
+    /*
     this.profilepicdata.child(firebase.auth().currentUser.uid).child('profilepicture.png')
     .putString(pic, 'base64', {contentType: 'image/png'}).then((savedpicture) => {
       this.userdata.child(firebase.auth().currentUser.uid).update({'profilepic' : savedpicture.downloadURL});
     });
+    */
   }
+
 
   updateEmailNode(newemail) {
     this.userdata.child(this.userauth.uid).update({'email' : newemail});
@@ -294,22 +297,17 @@ export class UserData {
   // AWARDS
   //-----------------------------------------------------------------------
   getAwardsList() {
-    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('createdDate');
+    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('datecreated');
   }
   addAwards(){
     var newAward = this.rewardsdata.child(this.user.rewardsid + "/awards/");
     newAward.push({ name: 'Earn', type: 'earn-award', description: 'You have earned 10 points, that gives you $5 credit to your next purchase.', icon: 'ios-cash-outline', reedeemed: 'false', createdDate: firebase.database['ServerValue']['TIMESTAMP'] });
   }
   redeemAwards(awardID) {
-    this.rewardsdata.child(this.userauth.uid + "/rewards/" + awardID).push({ redeemed: true });
+    this.rewardsdata.child(this.user.rewardsid + "/awards/" + awardID + "/").update({ reedeemed: true });
   }
   getOpenAward(){
-    //return this.af.database.list('/rewards/' + this.user.rewardsid + '/awards/', {
-    //  query: {
-    //    orderByChild: 'createdDate'
-    //  }
-    //}).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
-    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('datecreated').limitToFirst(1);
+    return this.rewardsdata.child(this.user.rewardsid + '/awards/').orderByChild('reedeemed').equalTo('false').limitToFirst(1);
   }
 
   //
@@ -343,7 +341,12 @@ export class UserData {
  getMenuList() {
    return this.menudata.orderByChild('category');
  }
+ getMenuImage(image)
+ {
 
+    var rtn = this.menupicdata.child(image).getDownloadURL();
+    return rtn;
+ }
 
   //
   // MISCELANEOUS

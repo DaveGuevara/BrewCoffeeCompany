@@ -18,10 +18,11 @@
           </ion-label>
         </ion-item-divider>
         <ion-item *ngFor="let award of group.awards" #slidingItem>
-            Icon: {{ award.icon }} <br/>
-            Type: {{ award.type}} -
-            Name: {{ award.name }} <br/>
-            Description: {{ award.description }}
+            <h2>{{award.type}}</h2>
+            <div>
+              <ion-icon name="ios-trophy-outline"></ion-icon>
+              {{ award.description }}
+            </div>
         </ion-item>
       </ion-item-group>
     </ion-list>

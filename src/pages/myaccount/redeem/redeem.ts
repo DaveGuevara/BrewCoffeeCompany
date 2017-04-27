@@ -25,20 +25,23 @@ export class RedeemPage {
 
   useAward(){
     let alert = this.alertCtrl.create({
-      title: 'You are Done!',
-      subTitle: 'your submission has been accepted',
+      title: 'Redeemable only once!',
+      subTitle: 'Are you sure you want to redeem this award now?',
       buttons: [
+          {
+            text:'OK',
+            handler: () => {
+              //what if its ok?
+              this.userData.redeemAwards(this.award.$key)
+              this.userData.addHistory("Redeem","Redeemed Award", 0)
+              this.navCtrl.pop();
+            }
+          },
           {
             text: 'Cancel',
             role: 'cancel',
             handler: () => {
               //what to do if cancel?
-            }
-          },
-          {
-            text:'OK',
-            handler: () => {
-              //what if its ok?
             }
           }
       ]

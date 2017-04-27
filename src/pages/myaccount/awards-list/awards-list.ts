@@ -28,26 +28,30 @@ export class AwardsListPage {
 
       award.forEach(snapshot => {
         let awd = snapshot.val();
-        let tempAward = ({
-          $key: snapshot.key,
-          type: awd.type,
-          name: awd.name,
-          description: awd.description,
-          icon: awd.icon,
-          reedeemed: awd.redeemed,
-          createdDate: new Date(awd.createdDate).toJSON()
-        });
 
-        if (tempAward.createdDate != currentDate){
-          currentDate = tempAward.createdDate;
-          let newGroup = {
-            date: currentDate,
-            awards: []
-          };
-          currentAwards = newGroup.awards;
-          that.groupedAwards.push(newGroup);
-        }
-        currentAwards.push(tempAward);
+        if (awd.reedeemed.toString() == 'true')
+        {
+          let tempAward = ({
+            $key: snapshot.key,
+            type: awd.type,
+            name: awd.name,
+            description: awd.description,
+            icon: "fa " + awd.icon + " introOrange customized",
+            reedeemed: awd.reedeemed,
+            createdDate: new Date(awd.createdDate).toJSON()
+          });
+
+          if (tempAward.createdDate != currentDate){
+            currentDate = tempAward.createdDate;
+            let newGroup = {
+              date: currentDate,
+              awards: []
+            };
+            currentAwards = newGroup.awards;
+            that.groupedAwards.push(newGroup);
+          }
+          currentAwards.push(tempAward);
+        };
       })
       // Disable loading controll when promise is complete
       this.userData.LoadingControllerDismiss();
