@@ -10,14 +10,14 @@ import { UserData } from '../../../providers/user-data';
   templateUrl: 'menu-list.html'
 })
 export class MenuListPage {
-
+  test: any;
   Menu: FirebaseListObservable<any>;
   groupedMenu = [];
 
     constructor(
       public nav: NavController,
       public alertController: AlertController,
-      public userData: UserData) {}
+      public userData: UserData) { }
 
     ionViewDidLoad() {
       this.userData.getMenuList().on('value',(Menu) => {
@@ -33,6 +33,8 @@ export class MenuListPage {
             category: menu.category,
             name: menu.name,
             description: menu.description,
+            image: "assets/img/" + menu.image,
+            //image: this.userData.getMenuImage(menu.image),
           });
 
           if (tempMenu.category != currentCategory){

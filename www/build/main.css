@@ -84454,7 +84454,7 @@ sub {
 }
 
 page-about .about-header {
-  background-color: #434954;
+  background-color: #172F39;
   padding: 16px;
   width: 100%;
   min-height: 150px;
@@ -84681,6 +84681,15 @@ page-logout .logoutScreen {
   background-color: #172F39;
 }
 
+page-awards-list h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+page-awards-list ion-icon {
+  width: 30px;
+}
+
 .grid-basic-page {
   border-radius: 20px;
   background-image: url("../assets/img/dashboard.png");
@@ -84833,6 +84842,35 @@ page-earn div.disabledKey {
   background-color: #FFFFFF;
 }
 
+page-history-list ion-icon {
+  width: 50px;
+}
+
+page-history-list .points {
+  color: gray;
+}
+
+.twenty {
+  display: inline-block;
+  width: 20%;
+  /* or waterver you need = w1 */
+  vertical-align: top;
+}
+
+.fourty {
+  display: inline-block;
+  width: 40%;
+  /* or waterver you need = w1 */
+  vertical-align: top;
+}
+
+.sixty {
+  display: inline-block;
+  width: 60%;
+  /* or waterver you need = w1 */
+  vertical-align: top;
+}
+
 .grid-basic-page {
   border-radius: 20px;
   background-image: url("../assets/img/dashboard.png");
@@ -84872,8 +84910,50 @@ ion-card {
 }
 
 page-redeem redeem_image {
-  width: 80%;
-  height: auto;
+  height: 175px !important;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-redeem .divImage {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-redeem .divText {
+  display: inline-block;
+}
+
+page-redeem .divImage .i {
+  width: 175px !important;
+  height: 175px !important;
+  font-size: 90px;
+  line-height: 38px;
+  color: #fff;
+  margin: 7% 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 page-personalprofile ion-card {
