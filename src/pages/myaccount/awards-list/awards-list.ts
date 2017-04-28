@@ -29,7 +29,7 @@ export class AwardsListPage {
       award.forEach(snapshot => {
         let awd = snapshot.val();
 
-        if (awd.reedeemed.toString() == 'true')
+        if (awd.reedeemed.toString() == 'false')
         {
           let tempAward = ({
             $key: snapshot.key,
