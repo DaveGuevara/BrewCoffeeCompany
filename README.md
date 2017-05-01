@@ -34,8 +34,10 @@ However, the rules need to be enhanced to: (1) prevent users from modifying a ho
 
 
 ## Contribute
+Lead Programmer: David Guevara
+Programmer: Rholand Abrahantes
 
-This is a work in-progress and
+This is a work in-progress.
 
 ## Connect
 
